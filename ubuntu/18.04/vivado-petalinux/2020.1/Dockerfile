@@ -49,6 +49,12 @@ RUN chmod +x /opt/Xilinx_Unified_*/xsetup && \
     rm -rf /opt/Xilinx_Unified_*/ && \
     rm -rf /tmp/.X*
 
+# patch Y2K22
+#COPY files/y2k22_patch-1.2.zip /opt/
+#RUN unzip -d /opt/Xilinx /opt/y2k22_patch-1.2.zip && \
+#    cd /opt/Xilinx && \
+#    LD_LIBRARY_PATH=/opt/Xilinx/Vivado/2020.1/tps/lnx64/python-2.7.16/lib/ /opt/Xilinx/Vivado/2020.1/tps/lnx64/python-2.7.16/bin/python2.7 /opt/Xilinx/y2k22_patch/patch.py
+
 # Install board_files of Avnet and Digilent
 RUN wget https://github.com/Avnet/bdf/archive/master.zip -O avnet.zip && \
     wget https://github.com/Digilent/vivado-boards/archive/master.zip -O digilent.zip && \
